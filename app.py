@@ -116,7 +116,7 @@ st.title("Weather vs GitHub Activity")
 st.write("Simple January 2024 data experiment")
 st.markdown("---")
 
-# --- quick stats ---
+# --- sample description ---
 
 avg_commits = df['Avg Commits'].values
 temps = df['Temperature'].values
@@ -126,11 +126,10 @@ r_ct = pearson(avg_commits, temps)
 r_cs = pearson(avg_commits, snow)
 r_ts = pearson(temps, snow)
 
-c1, c2, c3, c4 = st.columns(4)
-c1.metric("Sample", f"N = {len(df)} days")
-c2.metric("Commits vs Temp", f"r = {r_ct:.3f}")
-c3.metric("Commits vs Snow", f"r = {r_cs:.3f}")
-c4.metric("Temp vs Snow", f"r = {r_ts:.3f}")
+st.markdown(f"""
+**Sample:** {len(student_list)} students randomly selected from [uwgitrank.com](https://uwgitrank.com/), 
+analyzed over January 2024. Data includes daily temperature and snowfall from Waterloo, Ontario.
+""")
 
 st.markdown("---")
 
@@ -165,26 +164,18 @@ st.markdown("---")
 
 # --- conclusion ---
 
-st.subheader("Quick Notes")
+st.subheader("Conclusion")
 
 st.markdown(f"""
-**What this includes:**
-31 days in January 2024, {len(student_list)} students, and daily average commits.
+Looking at this month of data, weather doesn't seem to explain much of the variation in commit volume. The only noticeable pattern is a moderate negative relationship between temperature and commits (r = {r_ct:.3f}), but even that feels tentative. With just a month of data and plenty of other factors I didn't account for, this is really just exploratory. To make a stronger claim, I'd need a longer, multi-season dataset with detailed day-by-day commit history.
+""")
 
-**Basic stats:**
-- Avg temp: {temps.mean():.2f}°C
-- Temp range: {temps.min():.1f}°C to {temps.max():.1f}°C
-- Total snowfall: {snow.sum():.1f}mm
-- Avg daily commits: {avg_commits.mean():.2f}
+st.subheader("Limitations & Considerations")
 
-**Correlations (r):**
-- Commits vs temp: {r_ct:.3f}
-- Commits vs snowfall: {r_cs:.3f}
-- Temp vs snowfall: {r_ts:.3f}
-
-**Limitations:**
-One month is a small sample, and many other things (deadlines, classes, personal schedule) can affect commit activity.
-
-**Takeaway:**
-In this small sample, weather seems to have a weak effect on commits. It is a nice first pass, but not a final conclusion.
+st.markdown("""
+- **Single month sample:** Only 31 days of data is insufficient for detecting seasonal patterns
+- **Confounding variables:** Deadlines, exams, personal schedule, and project deadlines all influence commits
+- **No individual histories:** Data is aggregated across students; individual variation is hidden
+- **Synthetic data:** Daily commits are synthetically generated rather than real GitHub history
+- **Temporal lag effects:** There may be delayed effects between weather and behavior that one month can't capture
 """)
