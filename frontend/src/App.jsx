@@ -85,7 +85,7 @@ function App() {
     <div className="container">
       <div className="header">
         <h1>Weather vs GitHub Activity</h1>
-        <p>Anonymous aggregated analysis for January 2024</p>
+        <p>Simple January 2024 data experiment</p>
       </div>
 
       <div className="stats-grid">

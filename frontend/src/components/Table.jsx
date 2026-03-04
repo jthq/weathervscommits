@@ -13,8 +13,8 @@ function Table({ data }) {
 
   return (
     <div className="table-section">
-      <h2>Daily Aggregated Table</h2>
-      <p className="chart-meta">All users are anonymized and represented as one daily average commit signal.</p>
+      <h2>Daily Data Table</h2>
+      <p className="chart-meta">This table shows daily weather with average commits.</p>
       <table>
         <thead>
           <tr>

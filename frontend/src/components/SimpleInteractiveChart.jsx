@@ -58,8 +58,8 @@ function SimpleInteractiveChart({ data }) {
 
   return (
     <section className="chart-section">
-      <h2>Average Commit Trend vs Weather</h2>
-      <p className="chart-meta">Interactive: hover across the chart for exact values, and toggle weather overlays.</p>
+      <h2>Average Commits vs Weather</h2>
+      <p className="chart-meta">Hover to see values. You can also hide temperature or snowfall.</p>
 
       <div className="controls">
         <button className={`chip ${showTemp ? 'active' : ''}`} onClick={() => setShowTemp((v) => !v)}>
