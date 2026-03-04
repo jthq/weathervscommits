@@ -10,7 +10,7 @@ def gimme_weather_data(wloo):
     # API gets mail 
     unpacked_data = api_delivery.json()
     # Unpacking the mail ^
-    weather_table = obeah.DataFrame(unpacked_data['daily'])
+    weather_table = obeah.DataFrame(unpacked_data['daily']) # hi
     # makes a table with the data ^^^^
 
     # names r tedious so we gotta rename them 
