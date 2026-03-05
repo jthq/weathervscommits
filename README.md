@@ -1,3 +1,3 @@
 # Weather vs Commits
 
-Exploring if weather affects how much I code.
+Exploring if weather affects how much one codes.
